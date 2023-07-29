@@ -24,7 +24,7 @@ pipeline {
         }
         stage ('create service'){
             steps{
-                sh '/usr/bin/docker docker container run -itd --name ditiss_demo -p 4000:4000 smaranm/ditissimg'
+                sh '/usr/bin/docker container run -itd --name ditiss_demo -p 4000:4000 smaranm/ditissimg'
             }
         }
     }
