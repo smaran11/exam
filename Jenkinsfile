@@ -22,14 +22,9 @@ pipeline {
                 sh '/usr/bin/docker image push smaranm/ditissimage'
             }
         }
-        stage ('Remove service'){
-            steps{
-                sh '/usr/bin/docker service rm service1'
-            }
-        }
         stage ('create service'){
             steps{
-                sh '/usr/bin/docker service create --name service1 -p 4000:4000 --replicas 2 smaranm/ditissimage'
+                sh '/usr/bin/docker docker container run -itd --name ditiss_demo -p 4000:4000 smaranm/ditissimg'
             }
         }
     }
